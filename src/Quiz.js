@@ -3,13 +3,22 @@ import questions from "./questions";
 
 const Quiz = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [score, setScore] = useState(0);
+    const [results, setResults] = useState([]);
     const [showResult, setShowResult] = useState(false);
 
     const handleAnswer = (selectedOption) => {
-        if (selectedOption === questions[currentQuestion].answer) {
-            setScore(score + 1);
-        }
+        const isCorrect = selectedOption === questions[currentQuestion].answer;
+
+        // Füge die Antwort zur Result-Liste hinzu
+        setResults((prevResults) => [
+            ...prevResults,
+            {
+                question: questions[currentQuestion].question,
+                selectedOption,
+                correctAnswer: questions[currentQuestion].answer,
+                isCorrect,
+            },
+        ]);
 
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < questions.length) {
@@ -21,7 +30,7 @@ const Quiz = () => {
 
     const restartQuiz = () => {
         setCurrentQuestion(0);
-        setScore(0);
+        setResults([]);
         setShowResult(false);
     };
 
@@ -30,7 +39,22 @@ const Quiz = () => {
             {showResult ? (
                 <div className="result">
                     <h2>Quiz beendet!</h2>
-                    <p>Du hast {score} von {questions.length} Fragen richtig beantwortet.</p>
+                    <p>Du hast {results.filter((result) => result.isCorrect).length} von {questions.length} Fragen richtig beantwortet.</p>
+                    <h3>Ergebnisse:</h3>
+                    <ul>
+                        {results.map((result, index) => (
+                            <li key={index}>
+                                <strong>Frage:</strong> {result.question} <br />
+                                <strong>Deine Antwort:</strong> {result.selectedOption} <br />
+                                <strong>Richtige Antwort:</strong> {result.correctAnswer} <br />
+                                {result.isCorrect ? (
+                                    <span style={{ color: "green" }}>✔️ Richtig</span>
+                                ) : (
+                                    <span style={{ color: "red" }}>❌ Falsch</span>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
                     <button onClick={restartQuiz}>Quiz neu starten</button>
                 </div>
             ) : (

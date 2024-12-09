@@ -31,6 +31,9 @@ header {
 
 .options {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 button {
@@ -41,12 +44,75 @@ button {
     margin: 5px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
     background-color: #004c99;
+    transform: scale(1.05);
 }
 
 .result {
     text-align: center;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.result h2 {
+    font-size: 24px;
+    color: #232f3e;
+    margin-bottom: 10px;
+}
+
+.result p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.result ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto 20px;
+}
+
+.result ul li {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.result ul li span {
+    font-weight: bold;
+}
+
+.result ul li span.correct {
+    color: #28a745;
+}
+
+.result ul li span.incorrect {
+    color: #dc3545;
+}
+
+.result button {
+    background-color: #232f3e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.result button:hover {
+    background-color: #1d2530;
+}
+
