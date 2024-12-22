@@ -9,7 +9,7 @@ function App() {
           <h1>AWS Quiz</h1>
         </header>
         <main>
-          <Quiz />
+            <Quiz/>
         </main>
       </div>
   );

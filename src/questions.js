@@ -20,8 +20,13 @@ const questions = [
         answer: "Bereitstellung von virtuellen Servern",
     },
     {
+        question: "Welche der folgenden Aussagen beschreibt am besten das Konzept von 'serverlosem Computing' in AWS?",
+        options: ["Benutzer müssen die Serverhardware konfigurieren und verwalten", "Server werden automatisch skaliert und verwaltet, ohne dass der Benutzer sich darum kümmern muss", "Der Benutzer muss den Server selbst in der Cloud hosten", "Benutzer können keine Server verwenden, sondern müssen ausschließlich virtuelle Maschinen nutzen"],
+        answer: "Server werden automatisch skaliert und verwaltet, ohne dass der Benutzer sich darum kümmern muss",
+    },
+    {
         question: "Welcher AWS-Dienst wird für serverloses Computing genutzt?",
-        options: ["AWS Lambda", "Amazon ECS", "Amazon Lightsail", "Amazon DynamoDB"],
+        options: ["AWS Lambda", "Amazon ECS", "Amazon Redshift", "Amazon S3"],
         answer: "AWS Lambda",
     },
     {
@@ -30,25 +35,20 @@ const questions = [
         answer: "Bereitstellung einer verwalteten Datenbanklösung",
     },
     {
-        question: "Welcher AWS-Dienst unterstützt Content Delivery?",
-        options: ["Amazon S3", "AWS CloudFront", "Amazon SNS", "AWS Glue"],
-        answer: "AWS CloudFront",
-    },
-    {
-        question: "Welche Datenbank ist serverlos und NoSQL in AWS?",
-        options: ["Amazon Aurora", "Amazon Redshift", "Amazon DynamoDB", "Amazon S3"],
-        answer: "Amazon DynamoDB",
+        question: "Welcher AWS-Dienst wird hauptsächlich für die Speicherung von Daten im Cloud-Speicher verwendet?",
+        options: ["AWS IAM", "Amazon RDS", "Amazon EC2", "Amazon S3"],
+        answer: "Amazon S3",
     },
     {
         question: "Was ist der Hauptzweck von AWS IAM?",
-        options: ["Verwaltung von Benutzer- und Zugriffsrechten", "Monitoring von Ressourcen", "Optimierung von Kosten", "Erstellen von Netzwerken"],
+        options: ["Monitoring von Ressourcen", "Verwaltung von Benutzer- und Zugriffsrechten", "Optimierung von Kosten", "Erstellen von Netzwerken"],
         answer: "Verwaltung von Benutzer- und Zugriffsrechten",
     },
     {
-        question: "Wie heißt der Dienst, der für die Überwachung und das Logging in AWS verwendet wird?",
-        options: ["Amazon CloudWatch", "AWS Config", "AWS Glue", "Amazon Inspector"],
-        answer: "Amazon CloudWatch",
-    },
+        question: "Welcher AWS-Dienst unterstützt die einfache Entwicklung von Web- und Mobilanwendungen?",
+        options: ["Amazon RDS", "AWS CloudFront", "AWS Amplify", "AWS Lambda"],
+        answer: "AWS Amplify",
+    }
 ];
 
 export default questions;
