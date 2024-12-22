@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import questions from "./questions";
 
+// Funktion zum Mischen der Antwort-Optionen
+const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; // Elemente vertauschen
+    }
+    return shuffled;
+};
+
 const Quiz = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [results, setResults] = useState([]);
@@ -34,6 +44,9 @@ const Quiz = () => {
         setShowResult(false);
     };
 
+    // Zufällig gemischte Antwort-Optionen für die aktuelle Frage
+    const shuffledOptions = shuffleArray(questions[currentQuestion].options);
+
     return (
         <div className="quiz-container">
             {showResult ? (
@@ -62,7 +75,7 @@ const Quiz = () => {
                     <h2>Frage {currentQuestion + 1} von {questions.length}</h2>
                     <p>{questions[currentQuestion].question}</p>
                     <div className="options">
-                        {questions[currentQuestion].options.map((option, index) => (
+                        {shuffledOptions.map((option, index) => (
                             <button key={index} onClick={() => handleAnswer(option)}>
                                 {option}
                             </button>
