@@ -6,7 +6,7 @@ function App() {
   return (
       <div className="App">
         <header>
-          <h1>AWS Quiz</h1>
+          <h1>Spark Quiz</h1>
         </header>
         <main>
             <Quiz/>
