@@ -1,11 +1,11 @@
 const questions = [
     {
-        question: "Was ist Apache Spark, und wie unterscheidet es sich von Hadoop?",
+        question: "Was ist Apache Spark?",
         options: ["Apache Spark ist eine Programmiersprache.", "Apache Spark ist ein Framework für verteilte Datenverarbeitung.", "Apache Spark ist ein Webserver.", "Apache Spark ist eine Datenbanktechnologie."],
         answer: "Apache Spark ist ein Framework für verteilte Datenverarbeitung."
     },
     {
-        question: "Welche Komponenten umfasst die Apache-Spark-Architektur?",
+        question: "Welche Komponenten umfassen das Apache Spark Ökosystem?",
         options: ["Spark SQL, Spark Streaming, MLlib, GraphX", "Spark SQL, Spark Core, Spark Streaming", "Spark Core, Apache Kafka, GraphX", "Spark SQL, MLlib, Apache Flink"],
         answer: "Spark SQL, Spark Streaming, MLlib, GraphX"
     },
@@ -36,13 +36,13 @@ const questions = [
     },
     {
         question: "Wie funktioniert die Lazy Evaluation in Spark, und warum ist sie wichtig?",
-        options: ["Daten werden sofort verarbeitet, wenn eine Transformation aufgerufen wird.", "Transformationen werden ausgeführt, sobald die Ergebnisse benötigt werden, um Effizienz zu erhöhen.", "Lazy Evaluation hat keine Auswirkungen auf Spark.", "Transformationen werden sofort im Speicher berechnet."],
-        answer: "Transformationen werden ausgeführt, sobald die Ergebnisse benötigt werden, um Effizienz zu erhöhen."
+        options: ["Daten werden sofort verarbeitet, wenn eine Transformation aufgerufen wird.", "Transformationen werden ausgeführt, sobald die Ergebnisse benötigt werden, um die Effizienz zu erhöhen.", "Lazy Evaluation hat keine Auswirkungen auf Spark.", "Transformationen werden sofort im Speicher berechnet."],
+        answer: "Transformationen werden ausgeführt, sobald die Ergebnisse benötigt werden, um die Effizienz zu erhöhen."
     },
     {
-        question: "Wie kann man Daten in Apache Spark persistieren oder cachen?",
-        options: ["Mit der `persist()` oder `cache()` Methode.", "Mit der `save()` Methode.", "Durch Komprimierung der Daten in RDDs.", "Mit der `store()` Methode."],
-        answer: "Mit der `persist()` oder `cache()` Methode."
+        question: "Welche drei Funktionen sind Transformationen?",
+        options: ["count(), collect(), saveAsTextFile()", "map(), filter(), withColumn()", "count(), filter(), show()", "saveAsTextFile(), show(), foreach()"],
+        answer: "map(), filter(), withColumn()"
     },
     {
         question: "Was ist ein Shuffle, und welche Auswirkungen hat er auf die Performance?",
@@ -50,29 +50,29 @@ const questions = [
         answer: "Daten werden zwischen Partitionen verschoben, was die Leistung beeinträchtigen kann."
     },
     {
-        question: "Was ist Spark SQL, und wie unterscheidet es sich von Core Spark?",
-        options: ["Spark SQL bietet die Verarbeitung von strukturierten Daten mit SQL-Abfragen.", "Core Spark ist die einzige Möglichkeit, mit Spark zu arbeiten.", "Spark SQL ermöglicht die Ausführung von Spark-Anwendungen mit Python.", "Core Spark ist speziell für Echtzeit-Datenverarbeitung."],
-        answer: "Spark SQL bietet die Verarbeitung von strukturierten Daten mit SQL-Abfragen."
+        question: "Was ist PySpark?",
+        options: ["PySpark bietet die Verarbeitung von strukturierten und halb strukturierten Daten mit SQL-Abfragen.", "PySpark ist die einzige Möglichkeit, mit Spark zu arbeiten.", "PySpark ermöglicht die Ausführung von Spark-Anwendungen mit Java.", "Spark SQL ist speziell für Echtzeit-Datenverarbeitung."],
+        answer: "PySpark bietet die Verarbeitung von strukturierten und halb strukturierten Daten mit SQL-Abfragen."
     },
     {
-        question: "Wie können DataFrames mit SQL-Abfragen in Spark bearbeitet werden?",
-        options: ["Indem DataFrames in Tabellen umgewandelt und SQL-Abfragen darauf ausgeführt werden.", "Indem DataFrames mit Python bearbeitet werden.", "Indem SQL-Datenbanken direkt aufgerufen werden.", "DataFrames können nicht mit SQL bearbeitet werden."],
-        answer: "Indem DataFrames in Tabellen umgewandelt und SQL-Abfragen darauf ausgeführt werden."
+        question: "Wie können DataFrames mit SQL Abfragen in Spark bearbeitet werden?",
+        options: ["Indem DataFrames in Tabellen umgewandelt und SQL Abfragen darauf ausgeführt werden.", "Indem DataFrames mit Python bearbeitet werden.", "Indem SQL-Datenbanken direkt aufgerufen werden.", "DataFrames können nicht mit SQL bearbeitet werden."],
+        answer: "Indem DataFrames in Tabellen umgewandelt und SQL Abfragen darauf ausgeführt werden."
     },
     {
-        question: "Welche Bibliotheken bietet Apache Spark für maschinelles Lernen, und wie wird MLlib eingesetzt?",
-        options: ["MLlib bietet Algorithmen für maschinelles Lernen und kann mit RDDs und DataFrames arbeiten.", "MLlib bietet nur Datenbankoperationen.", "MLlib ist eine Bibliothek für SQL-Abfragen.", "MLlib kann nur mit unstrukturierten Daten verwendet werden."],
+        question: "Wie wird MLlib eingesetzt?",
+        options: ["MLlib bietet Algorithmen für maschinelles Lernen und kann mit RDDs und DataFrames arbeiten.", "MLlib bietet nur Datenbankoperationen.", "MLlib ist eine Bibliothek für SQL Abfragen.", "MLlib kann nur mit unstrukturierten Daten verwendet werden."],
         answer: "MLlib bietet Algorithmen für maschinelles Lernen und kann mit RDDs und DataFrames arbeiten."
     },
     {
         question: "Wie integriert Spark Streaming Echtzeit-Datenverarbeitung?",
-        options: ["Durch die Verarbeitung von DStreams (discretized streams), die Daten in kleinen Batches behandeln.", "Durch die Verwendung von SQL-Abfragen in Echtzeit.", "Durch die Verwendung von RDDs ohne Partitionierung.", "Spark Streaming wird nicht für Echtzeit verwendet."],
+        options: ["Durch die Verarbeitung von DStreams (discretized streams), die Daten in kleinen Batches behandeln.", "Durch die Verwendung von SQL Abfragen in Echtzeit.", "Durch die Verwendung von RDDs ohne Partitionierung.", "Spark Streaming wird nicht für Echtzeit verwendet."],
         answer: "Durch die Verarbeitung von DStreams (discretized streams), die Daten in kleinen Batches behandeln."
     },
     {
         question: "Was ist ein Catalyst Optimizer, und welche Rolle spielt er bei der Abfrageoptimierung?",
-        options: ["Er ist eine Abfrageoptimierungs-Engine, die SQL-Abfragen und DataFrame-Operationen optimiert.", "Er ist der Hauptprozessor von Spark.", "Er optimiert nur maschinelles Lernen.", "Er führt keine Optimierungen durch."],
-        answer: "Er ist eine Abfrageoptimierungs-Engine, die SQL-Abfragen und DataFrame-Operationen optimiert."
+        options: ["Das ist eine Abfrageoptimierungs-Engine, die SQL Abfragen und DataFrame-Operationen optimiert.", "Es ist der Hauptprozessor von Spark.", "Es optimiert nur maschinelles Lernen.", "Es führt keine Optimierungen durch."],
+        answer: "Das ist eine Abfrageoptimierungs-Engine, die SQL Abfragen und DataFrame-Operationen optimiert."
     }
 ];
 
